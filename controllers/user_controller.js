@@ -61,7 +61,7 @@ const studentDelete=async(req,res)=>{
         const _id=req.params.id
         console.log(typeof(id))
      
-        let getdata1= await user_modules.findbyIdandDelete({id})
+        let getdata1= await user_modules.findbyIdandDelete({_id:_id})
        // res.send("Delete Successfully")
         res.status(201).send(getdata1) //koi bhi specfic data delete  krne k liye
           
