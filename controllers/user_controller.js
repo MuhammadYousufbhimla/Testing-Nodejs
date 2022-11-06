@@ -57,14 +57,12 @@ const specficstudent=async(req,res)=>{
 
     // Specfic student Delete
 const studentDelete=async(req,res)=>{
-  
-    
     try {
         const _id=req.params.id
         console.log(typeof(id))
      
-        let getdata1= await user_modules.findByIdAndDelete({_id:_id})
-        res.send("Delete Successfully")
+        let getdata1= await user_modules.findbyIdandDelete({id})
+       // res.send("Delete Successfully")
         res.status(201).send(getdata1) //koi bhi specfic data delete  krne k liye
           
     } catch (e) {
@@ -72,8 +70,6 @@ const studentDelete=async(req,res)=>{
         res.status(400).send(e)
     }
     
-    
     }
-
 
 module.exports={demoapi,getalluser,specficstudent,studentDelete}
