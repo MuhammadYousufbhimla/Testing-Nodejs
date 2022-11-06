@@ -35,5 +35,25 @@ const getalluser=async(req,res)=>{
     
     
     }
+// Specfic student
+const specficstudent=async(req,res)=>{
+  
+    
+    try {
+        const _id=req.params.id
+        console.log(typeof(id))
+     
+        let getdata1= await user_modules.find({_id:_id})
+        res.status(201).send(getdata1) //koi bhi specfic data get  krne k liye
+          
+    } catch (e) {
+        console.log(e)
+        res.status(400).send(e)
+    }
+    
+    
+    }
 
-module.exports={demoapi,getalluser}
+
+
+module.exports={demoapi,getalluser,specficstudent}
